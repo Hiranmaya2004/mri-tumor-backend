@@ -1,0 +1,38 @@
+# ── Python ──────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ── Virtual Environment ────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── IDE ────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Environment Variables ──────────────
+.env
+.env.local
+.env.production
+
+# ── Logs ───────────────────────────────
+*.log
+
+# ── Model files (tracked via Git LFS) ──
+# These are NOT ignored — they are LFS-tracked.
+# If you don't use LFS, uncomment below:
+# model/*.onnx
+# model/*.onnx.data
