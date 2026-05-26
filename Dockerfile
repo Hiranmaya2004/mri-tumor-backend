@@ -29,12 +29,8 @@ COPY app.py .
 # Copy model files
 COPY model/ model/
 
-# Expose port (Render uses $PORT env variable)
+# Expose port
 EXPOSE 8000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
-
-# Start server — Render injects $PORT automatically
-CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Start server — PORT is read via os.environ in app.py
+CMD ["python", "app.py"]
